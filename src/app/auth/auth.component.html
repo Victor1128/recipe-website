@@ -1,0 +1,43 @@
+<ng-template app-placeholder></ng-template>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <!--    <div class="alert alert-danger" *ngIf="errors.length !== 0">-->
+    <!--      <p class="text-danger" *ngFor="let error of errors">{{error}}</p>-->
+    <!--    </div>-->
+    <!--    <app-alert *ngIf="errors.length !== 0" [messages]="errors" (closed)="onHandleClose()"></app-alert>-->
+    <div class="spinner-container" *ngIf="isLoading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading" (click)="onFormTouch()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel required email>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input class="form-control" type="{{ showPassword? 'text': 'password'}}" id="password" name="password" ngModel
+                 required minlength="6">
+          <i class="glyphicon fa fa-eye" (click)="onChangeShowPassword()"
+             [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+        </div>
+      </div>
+      <div class="form-group" *ngIf="!isLoginMode">
+        <label for="password2">Enter password again</label>
+        <div class="password-container">
+          <input class="form-control" type="{{ showPassword2? 'text': 'password'}}" id="password2" name="password2"
+                 ngModel required minlength="6">
+          <span class="glyphicon fa" (click)="onChangeShowPassword2()"
+                [ngClass]="{'fa-eye': !showPassword2, 'fa-eye-slash': showPassword2}"></span>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary"
+                [disabled]="!authForm.valid">{{isLoginMode ? "Log in" : "Sign up"}}</button>
+        |
+        <button type="button" class="btn btn-primary" (click)="onChangeMode()">Switch
+          to {{!isLoginMode ? "Log in" : "Sign up"}}</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<a routerLink="{{index}}" class="list-group-item clearfix list-group-item-action" routerLinkActive="active">
+  <div class="float-left">
+    <h5 class="mb-1">{{recipe.name}}</h5>
+    <p class="mb-1">{{recipe.description}}</p>
+  </div>
+  <span class="float-right">
+        <img [src]="recipe.imagePath" [alt]="recipe.name" class="img-fluid" style="max-height: 50px;">
+      </span>
+</a>

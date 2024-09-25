@@ -1,0 +1,21 @@
+.dropdown-menu {
+  right: 20px;
+}
+
+.active {
+  background-color: rgba(211, 211, 211, 0.65);
+}
+
+nav {
+  padding: 0;
+}
+
+li {
+  padding: 5px;
+}
+
+a {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=header.component.css.map */
