@@ -19,7 +19,7 @@ export class RecipeService {
   //   ),
   //   new Recipe(
   //     'Taieteii criminali',
-  //     'Te ustura curu cand termini',
+  //     'Te ustura cand termini',
   //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR54yBifKIeF1Tg4biXQhc3j-8-S1Ojl4SGQ&s',
   //     [
   //       new Ingredient('taietei la plic', 2),

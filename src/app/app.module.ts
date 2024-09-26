@@ -23,20 +23,15 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { PlaceholderDirective } from './shared/placeholder.directive';
+import { RecipesModule } from './recipes/recipes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    RecipeComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
     HeaderComponent,
-    RecipeItemComponent,
     DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
@@ -45,12 +40,10 @@ import { PlaceholderDirective } from './shared/placeholder.directive';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterOutlet,
-    RouterLink,
     ReactiveFormsModule,
     HttpClientModule,
-
     AppRoutingModule,
+    RecipesModule,
   ],
   providers: [
     ShoppingListService,
@@ -62,5 +55,6 @@ import { PlaceholderDirective } from './shared/placeholder.directive';
     },
   ],
   bootstrap: [AppComponent],
+  exports: [RecipeItemComponent],
 })
 export class AppModule {}
